@@ -1,38 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Github Profile search</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="icon" type="image/png" href="asset/image/copy.JPG">
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-        <section class="Search_box"> 
-            <input type="text" class="Input_bar" placeholder="Enter a github user name">
-            <button class="Search_btn">Search User</button>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="icon" type="image/png" href="asset/image/copy.JPG" />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div>
+      <section class="Search_box">
+        <input
+          type="text"
+          class="Input_bar"
+          placeholder="Enter a github user name"
+        />
+        <button class="Search_btn">Search User</button>
+      </section>
+      <main class="container">
+        <section class="Profile_info">
+          <img src="" alt="Avatar" class="Avatar" />
+          <div>
+            <p>Login Name</p>
+            <h2 id="Username" class="Username">Russel Fonta</h2>
+          </div>
+          <div>
+            <p>Follower <span>12</span></p>
+            <p>Following <span>32</span></p>
+            <a href="#" target="_blank" class="profile_link" id="profile_link"
+              >View Github Profile</a
+            >
+          </div>
         </section>
-        <main class="container">
-            <section class="Profile_info">
-                <img src="" alt="Avatar" class="Avatar">
-                <div><p> Login Name</p>
-                <h2 id="Username" class="Username">Russel Fonta</h2>
-            </div>
-            <div>
-                <p>Follower <span>12</span></p>
-                <p>Following <span>32</span></p>
-                <a href="#" target="_blank" class="profile_link" id="profile_link">View Github Profile</a>
-            </div>
-                
-
-            </section>
-            <section class="Respository">
-                <h3>Public Repository</h3>
-                <input type="text" placeholder="Enter a Repository Name"/>
-            </section>
-        </main>
-</body>
+        <section class="Respository">
+          <h3>Public Repository</h3>
+          <input type="text" placeholder="Enter a Repository Name" />
+          <ul>
+            <a href="#" class="Repo_list" id="Repo_list">Weather app</a>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    min-height: 90ch;      
+    margin: 0;             
+    border: 1px solid red;  
+}
+
+.Search_box{
+    align-items: center;
+}
+.container{
+    border: 1px solid;
+    align-items: center;
+    display: flex;
+    gap: 18px;
+    width: 780px;
+    align-items: center;
+    justify-content: center;
+
+}
+.Profile_info{
+    border: 1px solid red;
+    text-align: center;
+    
+}
+.Respository{
+    border: 1px solid green;
+    
+}
