@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Github Profile search</title>
@@ -17,7 +17,7 @@
         <input
           type="text"
           class="Input_bar"
-          placeholder="Enter a github user name"
+          placeholder="Enter a github user name...."
         />
         <button class="Search_btn">Search User</button>
       </section>
@@ -28,7 +28,7 @@
             <p>Login Name</p>
             <h2 id="Username" class="Username">Russel Fonta</h2>
           </div>
-          <div>
+          <div class="profile_">
             <p>Follower <span>12</span></p>
             <p>Following <span>32</span></p>
             <a href="#" target="_blank" class="profile_link" id="profile_link"
@@ -36,14 +36,17 @@
             >
           </div>
         </section>
-        <section class="Respository">
+        <section class="Repository">
           <h3>Public Repository</h3>
-          <input type="text" placeholder="Enter a Repository Name" />
-          <ul>
-            <a href="#" class="Repo_list" id="Repo_list">Weather app</a>
+          <input type="text" placeholder="Enter a Repository Name..." />
+          <ul class="Repo_list">
+            <li>
+              <a href="#">Weather app</a>
+            </li>
           </ul>
         </section>
       </main>
     </div>
+    <script src="script.js" defer></script>
   </body>
 </html>

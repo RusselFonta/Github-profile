@@ -1,42 +1,84 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;     
-    min-height: 90ch;      
-    margin: 0;             
-    border: 1px solid red;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90ch;
+  margin: 0;
+  border: 1px solid red;
+  background-color: rgba(67, 94, 117, 0.137);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.Search_box {
+  display: flex;
+  gap: 12px;
+}
+.Input_bar {
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid;
 }
 
-.Search_box{
-    display: flex;
+.Search_btn {
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: background-color 3s ease transform 1 ease;
 }
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-}
-.container{
-    border: 1px solid;
-    align-items: center;
-    display: flex;
-    gap: 18px;
-    width: auto;
-    align-items: center;
-    justify-content: center;
 
+.Search_btn:hover {
+  background-color: blue;
+  transform: scale(1.01);
 }
-.Profile_info{
-    border: 1px solid red;
-    text-align: center;
-    width:  200px;
-    height: 200px;
 
+.container {
+  border: 1px solid;
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
 }
-.Repository{
-    border: 1px solid gold;
-    text-align: center;
-    width:  200px;
-    height: 200px;
-    
+.Profile_info {
+  border: 1px solid red;
+  text-align: center;
+  width: 200px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 12px;
+  margin-left: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.Repository {
+  border: 1px solid gold;
+  text-align: center;
+  width: 400px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.Profile_Stat {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 10px;
+}
+.Repo_list {
+  list-style: none;
 }
