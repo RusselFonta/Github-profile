@@ -8,14 +8,20 @@ body {
 }
 
 .Search_box{
+    display: flex;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 18px;
 }
 .container{
     border: 1px solid;
     align-items: center;
     display: flex;
     gap: 18px;
-    width: 780px;
+    width: auto;
     align-items: center;
     justify-content: center;
 
@@ -23,9 +29,14 @@ body {
 .Profile_info{
     border: 1px solid red;
     text-align: center;
-    
+    width:  200px;
+    height: 200px;
+
 }
-.Respository{
-    border: 1px solid green;
+.Repository{
+    border: 1px solid gold;
+    text-align: center;
+    width:  200px;
+    height: 200px;
     
 }
