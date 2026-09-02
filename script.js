@@ -5,7 +5,7 @@ const Name = document.getElementById("Username");
 const userFollower = document.querySelector(".Follower");
 const userFollowing = document.querySelector(".following");
 const ProfileLink = document.querySelector(".profile_link");
-
+const RepoList = document.querySelector(".Repo_list");
 const ProfileSearch = async () => {
   try {
     const username = ProfileName.value.trim();
@@ -37,17 +37,22 @@ const ProfileSearch = async () => {
     ProfileLink.href = data.html_url;
 
     // displaying the number of repository
-    
-    const RepoUrl = `${data.repos_url}`
-    const RepoResponse = await fetch(RepoUrl)
 
-    if(!RepoResponse.ok){
-      throw new Error(`Response Status : ${RepoResponse.status}`)
+    const RepoUrl = `${data.repos_url}`;
+    const RepoResponse = await fetch(RepoUrl);
+
+    if (!RepoResponse.ok) {
+      throw new Error(`Response Status : ${RepoResponse.status}`);
     }
 
-    const RepoData = await RepoResponse.json()
-    console.log(RepoData)
+    const RepoData = await RepoResponse.json();
+    console.log(RepoData);
 
+    RepoList.textContent = RepoData.map((RepoLink) => 
+      `<li>
+    <a href="${RepoLink.html_url}">${RepoLink.name}</a>
+  </li>
+`).join('');
 
   } catch (error) {
     alert(error.message);
