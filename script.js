@@ -1,16 +1,17 @@
-const ProfileName = document.querySelector('.Input_bar')
-const SearchBtn = document.querySelector('.Search_btn')
-const Avatar = document.querySelector('.Avatar')
-const Name = document.getElementById('Username')
-const userFollower = document.querySelector('.Follower')
-const userFollowing = document.querySelector('.following')
+const ProfileName = document.querySelector(".Input_bar");
+const SearchBtn = document.querySelector(".Search_btn");
+const Avatar = document.querySelector(".Avatar");
+const Name = document.getElementById("Username");
+const userFollower = document.querySelector(".Follower");
+const userFollowing = document.querySelector(".following");
+const ProfileLink = document.querySelector(".profile_link");
 
 const ProfileSearch = async () => {
   try {
-    const username = ProfileName.value.trim()
+    const username = ProfileName.value.trim();
 
     if (username === "") {
-      alert("Enter a username to search")
+      alert("Enter a username to search");
       return;
     }
 
@@ -28,13 +29,12 @@ const ProfileSearch = async () => {
     const data = await response.json();
     console.log(data);
 
-    Avatar.src = data.avatar_url
-    Avatar.alt = data.name 
-    Name.textContent = `${data.name || data.login}`
-    userFollower.textContent = data.followers
-    userFollowing.textContent = data.following
-
-
+    Avatar.src = data.avatar_url;
+    Avatar.alt = data.name;
+    Name.textContent = `${data.name || data.login}`;
+    userFollower.textContent = data.followers;
+    userFollowing.textContent = data.following;
+    ProfileLink.href = data.html_url;
   } catch (error) {
     alert(error.message);
     console.log(error.message);
