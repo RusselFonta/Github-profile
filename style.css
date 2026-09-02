@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; 
+    min-height: 100vh;
     margin: 0;
     background-color: rgba(67, 94, 117, 0.137);
 }
@@ -23,11 +23,11 @@ body {
 }
 
 .Input_bar {
-    width: 250px; 
+    width: 250px;
     height: 35px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    padding-left: 10px; 
+    padding-left: 10px;
     box-sizing: border-box;
 }
 
@@ -38,7 +38,9 @@ body {
     border: none;
     cursor: pointer;
     padding: 8px 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
 }
 
 .Search_btn:hover {
@@ -61,12 +63,12 @@ body {
     text-align: center;
     width: 250px;
     padding: 15px;
-    border-right: 1px solid rgb(189, 189, 189); 
+    border-right: 1px solid rgb(189, 189, 189);
 }
 
 .Repository {
-    text-align: left; 
-    flex: 1; 
+    text-align: left;
+    flex: 1;
     padding: 15px;
 }
 
@@ -86,12 +88,12 @@ body {
     gap: 8px;
     margin-top: 15px;
     margin-bottom: 15px;
-    text-align: left; 
+    text-align: left;
 }
 
 .Repo_list {
     list-style: none;
-    padding: 0; 
+    padding: 0;
     margin: 0;
 }
 
@@ -112,8 +114,8 @@ body {
 .Profile_info img {
     width: 150px;
     height: 150px;
-    border-radius: 50%; 
-    object-fit: cover; 
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .Username {

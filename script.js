@@ -8,6 +8,7 @@ const ProfileLink = document.querySelector(".profile_link");
 const RepoList = document.querySelector(".Repo_list");
 const AvatarLink = document.querySelector(".Profile-image");
 const SearchRepo = document.querySelector(".SearchRepo");
+const ProfileDisplay = document.querySelector(".container");
 const ProfileSearch = async () => {
   try {
     const username = ProfileName.value.trim();
@@ -27,7 +28,7 @@ const ProfileSearch = async () => {
       }
       throw new Error(`Response Status : ${response.status}`);
     }
-
+    
     const data = await response.json();
     console.log(data);
 
