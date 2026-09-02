@@ -48,8 +48,8 @@ const ProfileSearch = async () => {
     const RepoData = await RepoResponse.json();
     console.log(RepoData);
 
-    RepoList.textContent = RepoData.map((RepoLink) => 
-      `<li>
+    RepoList.innerHTML = RepoData.map((RepoLink) => 
+      `<li class = 'Repo'>
     <a href="${RepoLink.html_url}">${RepoLink.name}</a>
   </li>
 `).join('');

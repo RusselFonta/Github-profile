@@ -2,9 +2,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90ch;
+    min-height: 100vh; 
     margin: 0;
-    border: 1px solid red;
     background-color: rgba(67, 94, 117, 0.137);
 }
 
@@ -13,6 +12,9 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 18px;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
 }
 
 .Search_box {
@@ -21,93 +23,113 @@ body {
 }
 
 .Input_bar {
-    width: 200px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid;
+    width: 250px; 
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    box-sizing: border-box;
 }
 
 .Search_btn {
-    border-radius: 10px;
+    border-radius: 8px;
     background-color: rgb(0, 0, 0);
     color: white;
     border: none;
     cursor: pointer;
     padding: 8px 16px;
-    transition: background-color 3s ease transform 1 ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .Search_btn:hover {
     background-color: blue;
-    transform: scale(1.01);
+    transform: scale(1.03);
 }
 
 .container {
-    border: 1px solid;
-    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
     display: flex;
-    gap: 18px;
-    width: auto;
-    height: auto;
-    align-items: center;
-    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
 .Profile_info {
-    border: 1px solid red;
     text-align: center;
     width: 250px;
-    height: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 12px;
-    margin-left: 12px;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    padding: 15px;
+    border-right: 1px solid rgb(189, 189, 189); 
 }
 
 .Repository {
-    border: 1px solid gold;
-    text-align: center;
-    width: 400px;
-    height: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 12px;
-    margin-right: 12px;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    text-align: left; 
+    flex: 1; 
+    padding: 15px;
 }
 
-.profile_stat{
+.Repository input {
+    width: 100%;
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid grey;
+    padding-left: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.profile_stat {
     display: flex;
     flex-direction: column;
-    margin-top: -5px;
-    margin-left: 10px;
-    justify-content: center;
-    border: 1px solid ;
-    margin-bottom: 8px;
-
+    gap: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left; 
 }
 
 .Repo_list {
     list-style: none;
+    padding: 0; 
+    margin: 0;
+}
+
+.Repo_list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.Repo_list a {
+    color: blue;
+    text-decoration: none;
+}
+
+.Repo_list a:hover {
+    text-decoration: underline;
 }
 
 .Profile_info img {
     width: 150px;
     height: 150px;
-    border-radius: 75px;
+    border-radius: 50%; 
+    object-fit: cover; 
 }
 
 .Username {
-    font-size: medium;
-    font-style: inherit;
-    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
 }
 
 .user-info {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
-    margin-left: 12px;
+    margin-top: 10px;
+}
+
+.user-info p {
+    margin: 0;
 }
