@@ -6,6 +6,8 @@ const userFollower = document.querySelector(".Follower");
 const userFollowing = document.querySelector(".following");
 const ProfileLink = document.querySelector(".profile_link");
 const RepoList = document.querySelector(".Repo_list");
+const AvatarLink = document.querySelector(".Profile-image");
+const SearchRepo = document.querySelector(".SearchRepo");
 const ProfileSearch = async () => {
   try {
     const username = ProfileName.value.trim();
@@ -35,9 +37,9 @@ const ProfileSearch = async () => {
     userFollower.textContent = data.followers;
     userFollowing.textContent = data.following;
     ProfileLink.href = data.html_url;
+    AvatarLink.href = data.html_url;
 
     // displaying the number of repository
-
     const RepoUrl = `${data.repos_url}`;
     const RepoResponse = await fetch(RepoUrl);
 
@@ -48,12 +50,28 @@ const ProfileSearch = async () => {
     const RepoData = await RepoResponse.json();
     console.log(RepoData);
 
-    RepoList.innerHTML = RepoData.map((RepoLink) => 
-      `<li class = 'Repo'>
-    <a href="${RepoLink.html_url}">${RepoLink.name}</a>
+    RepoList.innerHTML = RepoData.map(
+      (RepoLink) =>
+        `<li>
+    <a href="${RepoLink.html_url}" target="_blank">${RepoLink.name}</a>
   </li>
-`).join('');
+`,
+    ).join("");
+    //Display a search repository as the user type
+    SearchRepo.addEventListener("input", () => {
+      const RepoType = SearchRepo.value.trim().toLowerCase();
 
+      const RepoFilter = RepoData.filter((Repo) => {
+        return Repo.name.toLowerCase().includes(RepoType);
+      });
+
+      //Update Repolist as the user types
+      RepoList.innerHTML = RepoFilter.map(
+        (RepoLink) => `<li>
+      <a href="${RepoLink.html_url}" target="_blank">${RepoLink.name}</a>
+    </li>`,
+      ).join("");
+    });
   } catch (error) {
     alert(error.message);
     console.log(error.message);
