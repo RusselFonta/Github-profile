@@ -82,3 +82,14 @@ body {
 .Repo_list {
   list-style: none;
 }
+.Profile_info img{
+ width: 150px;
+ height: 150px;
+ border-radius: 75px;
+}
+.Username{
+    font-size: medium;
+    font-style: inherit;
+    font-family: 'Times New Roman', Times, serif;
+    
+}

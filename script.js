@@ -1,6 +1,7 @@
 const ProfileName = document.querySelector('.Input_bar')
 const SearchBtn = document.querySelector('.Search_btn')
 const Avatar = document.querySelector('.Avatar')
+const Name = document.getElementById('Username')
 
 const ProfileSearch = async () => {
   try {
@@ -12,19 +13,22 @@ const ProfileSearch = async () => {
     }
 
     const url = `https://api.github.com/users/${username}`;
-    const data = await fetch(url);
+    const response = await fetch(url);
 
-    if (!data.ok) {
-      if (data.status === 404) {
+    if (!response.ok) {
+      if (response.status === 404) {
         alert(`${username} not found`);
         return;
       }
-      throw new Error(`Response Status : ${data.status}`);
+      throw new Error(`Response Status : ${response.status}`);
     }
 
-    const response = await data.json();
-    console.log(response);
+    const data = await response.json();
+    console.log(data);
 
+    Avatar.src = data.avatar_url
+    Avatar.alt = data.name 
+    Name.textContent = data.name
 
 
   } catch (error) {
