@@ -35,6 +35,20 @@ const ProfileSearch = async () => {
     userFollower.textContent = data.followers;
     userFollowing.textContent = data.following;
     ProfileLink.href = data.html_url;
+
+    // displaying the number of repository
+    
+    const RepoUrl = `${data.repos_url}`
+    const RepoResponse = await fetch(RepoUrl)
+
+    if(!RepoResponse.ok){
+      throw new Error(`Response Status : ${RepoResponse.status}`)
+    }
+
+    const RepoData = await RepoResponse.json()
+    console.log(RepoData)
+
+
   } catch (error) {
     alert(error.message);
     console.log(error.message);
