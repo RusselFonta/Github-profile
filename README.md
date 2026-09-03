@@ -65,30 +65,33 @@ cd Github-profile
 
 ## 🧠 Challenges Faced
 
-- **Image Pathing:** Managing correct relative paths to display assets accurately within the document.
-- **Form Tag Nuances:** Mastering semantic HTML5 structure, specifically binding `<label>` and `<input>` tags using the `for` attribute.
-- **Code Architecture:** Organizing CSS style sheets efficiently to avoid redundancy and maintain clean code.
+- **Dynamic API URL Handling:** Building the request URL dynamically based on user input.
+- **Error Handling:** Implementing `try...catch` blocks and checking the `response.ok` status to prevent the UI from breaking during network issues or when an invalid username is entered.
+- **Dynamic Repository Filtering:** Building a robust repository filter function that tracks real-time user input to instantly filter and update the displayed repository list without page reloads.
 
 ---
 
-```
+## 📚 What I Learned
 
-📚 What I Learned
-How to structure a fullstack application
-Managing state in React
-Writing RESTful APIs
-Debugging network errors
+- Fetching and parsing dynamic parameters in JavaScript to update a `fetch()` request.
+- Safely injecting dynamic HTML content into the DOM based on real-time API responses.
+- Tracking real-time user input to instantly filter data and update the display.
 
+---
 
- Future Improvements
-Add payment integration
-Improve UI animations
-Add role-based access control
-Write unit tests
+ ## 🚀 Future Improvements
 
-👨🏽‍💻 Author
-Your Name
-Junior Fullstack Developer
-📩 Email: your@email.com
-🌍 Based in Cameroon | Open to remote opportunities
+- Add a search history feature using `localStorage`.
+- Implement a side-by-side comparison feature for two different GitHub profiles.
+- List the most popular repositories (sorted by stars) for the searched profile.
+
+---
+## 👨🏽‍💻 Author
+
+**Russel Fonta Fadil**  
+*Junior Fullstack Developer*  
+
+- 📩 **Email:** fontawestbrook99@gmail.com  
+- 🌍 **Location:** Cameroon (Open to remote opportunities)  
+- 💼 **GitHub:** [RusselFonta](https://github.com/RusselFonta)
 
