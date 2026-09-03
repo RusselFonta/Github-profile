@@ -17,7 +17,7 @@ const ProfileSearch = async () => {
       alert("Enter a username to search");
       return;
     }
-// fatching Data from the url
+// fetching Data from the url
     const url = `https://api.github.com/users/${username}`;
     const response = await fetch(url);
 
