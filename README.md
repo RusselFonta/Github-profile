@@ -14,83 +14,64 @@ Navigating the native GitHub interface to quickly evaluate a developer's overall
 
 ## 🎯 Project Goals
 
-- Allow users to create accounts
-- Enable appointment scheduling
-- Provide admin dashboard for clinic staff
-- Store and manage patient data securely
+- Enable users to **dynamically search for any GitHub account** using their username.
+- Extract and visually structure essential public data (repository list, followers, following ,username and link for the developer repository and github profile).
+- Provide a smooth, fast exploration for developer community without heavy framework.
 
 ---
 
 ## 🛠 Tech Stack
 
-**Frontend:**  
-- React  
-- CSS / Tailwind  
+**Technologies Used:**   
+- **HTML5 :** For semantic page structuring and the search form interface. 
+- **CSS3 :** For a modern and clean htlm design
+- **Javascript :** For capturing search events, DOM manipulation, and handling API requests. 
 
-**Backend:**  
-- Node.js  
-- Express  
-
-**Database:**  
-- MongoDB  
-
-**Other Tools:**  
-- Git & GitHub  
-- Postman  
-- Render / Vercel (Deployment)
+**Third-party Tool :** 
+- **GitHub REST API:** Endpoint (`https://api.github.com/users/${username}`) used to fetch live profile data.
 
 ---
 
 ## 🖥 Features
 
-- User authentication (JWT)
-- Form validation
-- CRUD operations
-- Responsive design
-- API integration
-- Error handling
+- **Dynamic Search Bar:** Instantly lookup any public GitHub username.
+- **User Not Found Handling:** Displays a clear, user-friendly error message if a searched profile does not exist (404 Error handling).
+- **Instant UI Updates:** Updates the DOM seamlessly without reloading the page using asynchronous JavaScript.
 
 ---
 
 ## 📷 Screenshots
 
-(Add screenshots here)
-
-Example:
-![Homepage Screenshot](link-to-image)
+![Github profile tracker](<asset/image/Github profile image.PNG>)
 
 ---
 
-## 🔗 Live Demo
+## ⚙️ Installation & Setup
 
-Frontend: https://your-live-link.com  
-Backend API: https://your-api-link.com  
-
----
-
-## ⚙ Installation & Setup
-
-Clone the repository:
+To clone and run this project locally, execute the following commands in your terminal:
 
 ```bash
-git clone https://github.com/yourusername/project-name.git
-cd project-name
+# Clone the repository
+git clone https://github.com/RusselFonta/Github-profile.git
 
+# Navigate into the project directory
+cd Github-profile
 
+# Switch Branch to feature/github-user-search if your are on the main branch
+ git checkout feature/github-user-search
+```
 
+---
 
+## 🧠 Challenges Faced
 
-Install dependencies:
-npm install
-Run the project:
-npm start
+- **Image Pathing:** Managing correct relative paths to display assets accurately within the document.
+- **Form Tag Nuances:** Mastering semantic HTML5 structure, specifically binding `<label>` and `<input>` tags using the `for` attribute.
+- **Code Architecture:** Organizing CSS style sheets efficiently to avoid redundancy and maintain clean code.
 
-🧠 Challenges Faced
-Explain technical challenges honestly.
-Example:
-Handling authentication tokens securely
-Managing protected routes in React
-Connecting frontend to backend APIs
+---
+
+```
 
 📚 What I Learned
 How to structure a fullstack application
