@@ -17,7 +17,7 @@ const ProfileSearch = async () => {
       alert("Enter a username to search");
       return;
     }
-
+// fatching Data from the url
     const url = `https://api.github.com/users/${username}`;
     const response = await fetch(url);
 
@@ -29,6 +29,7 @@ const ProfileSearch = async () => {
       throw new Error(`Response Status : ${response.status}`);
     }
     
+    //extraction of that in json format
     const data = await response.json();
     console.log(data);
 
@@ -64,6 +65,7 @@ const ProfileSearch = async () => {
 
       const RepoFilter = RepoData.filter((Repo) => {
         return Repo.name.toLowerCase().includes(RepoType);
+
       });
 
       //Update Repolist as the user types
