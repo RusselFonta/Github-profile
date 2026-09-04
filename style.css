@@ -10,7 +10,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: rgba(67, 94, 117, 0.137);
+  background-color: rgb(67 94 117 / 13%);
 }
 
 .wrapper {
@@ -23,12 +23,12 @@ body {
   padding: 20px;
 }
 
-.Search_box {
+.search-box {
   display: flex;
   gap: 12px;
 }
 
-.inputBar {
+.input-bar {
   width: 100%;
   max-width: 250px;
   height: 35px;
@@ -38,9 +38,9 @@ body {
   box-sizing: border-box;
 }
 
-.searchBtn {
+.search-btn {
   border-radius: 8px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0 0 0);
   color: white;
   border: none;
   cursor: pointer;
@@ -50,7 +50,7 @@ body {
     transform 0.2s ease;
 }
 
-.searchBtn:hover {
+.search-btn:hover {
   background-color: blue;
   transform: scale(1.03);
 }
@@ -66,20 +66,20 @@ body {
   padding: 20px;
 }
 
-.profileInfo {
+.profile-info {
   text-align: center;
   width: 250px;
   padding: 15px;
-  border-right: 1px solid rgb(189, 189, 189);
+  border-right: 1px solid rgb(155 154 154);
 }
 
-.Repository {
+.repository {
   text-align: left;
   flex: 1;
   padding: 15px;
 }
 
-.Repository input {
+.repository input {
   width: 100%;
   height: 35px;
   border-radius: 8px;
@@ -89,7 +89,7 @@ body {
   margin-bottom: 15px;
 }
 
-.profileStat {
+.profile-stat {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -98,27 +98,27 @@ body {
   text-align: left;
 }
 
-.repoList {
+.repo-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.repoList li {
+.repo-list li {
   padding: 8px 0;
   border-bottom: 1px solid #f0f0f0;
 }
 
-.repoList a {
+.repo-list a {
   color: blue;
   text-decoration: none;
 }
 
-.repoList a:hover {
+.repo-list a:hover {
   text-decoration: underline;
 }
 
-.profileInfo img {
+.profile-info img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -131,7 +131,7 @@ body {
   margin: 0;
 }
 
-.userInfo {
+.user-info {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,7 +145,7 @@ body {
     gap: 15px;
   }
 
-  .profileInfo {
+  .profile-info {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #3a3838;
