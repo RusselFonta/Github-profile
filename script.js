@@ -1,84 +1,72 @@
-const ProfileName = document.querySelector(".inputBar");
-const SearchBtn = document.querySelector(".searchBtn");
-const Avatar = document.querySelector(".Avatar");
-const Name = document.querySelector(".username");
+const profileNameInput = document.querySelector(".input-bar");
+const searchBtn = document.querySelector(".search-btn");
+const avatarImg = document.querySelector(".avatar");
+const nameDisplay = document.querySelector(".username");
 const userFollower = document.querySelector(".follower");
 const userFollowing = document.querySelector(".following");
-const ProfileLink = document.querySelector(".profileLink");
-const RepoList = document.querySelector(".repoList");
-const AvatarLink = document.querySelector(".profileImage");
-const SearchRepo = document.querySelector(".searchRepo");
-const ProfileDisplay = document.querySelector(".container");
-const ProfileSearch = async () => {
-  try {
-    const username = ProfileName.value.trim();
+const profileLink = document.querySelector(".profile-link");
+const repoList = document.querySelector(".repo-list");
+const avatarLink = document.querySelector(".profile-image");
+const searchRepoInput = document.querySelector(".search-repo");
 
+function clearResponse() {
+  avatarImg.src = 'asset/image/avatar.PNG'
+  avatarImg.alt = 'Avatar'
+  nameDisplay.textContent = ''
+  userFollower.textContent = ''
+  userFollowing.textContent = ''
+  profileLink.href = '#'
+  avatarLink.href = '#'
+  repoList.innerHTML = ''
+  searchRepoInput.value = ''
+  currentRepoData = []
+}
+const profileSearch = async () => {
+  try {
+    const username = profileNameInput.value.trim();
     if (username === "") {
       alert("Enter a username to search");
       return;
     }
-// fetching Data from the url
+
     const url = `https://api.github.com/users/${username}`;
     const response = await fetch(url);
 
     if (!response.ok) {
       if (response.status === 404) {
         alert(`${username} not found`);
+        clearResponse();
         return;
       }
       throw new Error(`Response Status : ${response.status}`);
     }
-    
-    //extraction of that in json format
-    const data = await response.json();
-    console.log(data);
 
-    Avatar.src = data.avatar_url;
-    Avatar.alt = data.name;
-    Name.textContent = `${data.name || data.login}`;
+    const data = await response.json();
+
+    avatarImg.src = data.avatar_url;
+    avatarImg.alt = `${data.name || data.login}`;
+    nameDisplay.textContent = `${data.name || data.login}`;
     userFollower.textContent = data.followers;
     userFollowing.textContent = data.following;
-    ProfileLink.href = data.html_url;
-    AvatarLink.href = data.html_url;
+    profileLink.href = data.html_url;
+    avatarLink.href = data.html_url;
 
-    // displaying the number of repository
-    const RepoUrl = `${data.repos_url}`;
-    const RepoResponse = await fetch(RepoUrl);
+    const repoUrl = `${data.repos_url}?per_page=100`;
+    const repoResponse = await fetch(repoUrl);
 
-    if (!RepoResponse.ok) {
-      throw new Error(`Response Status : ${RepoResponse.status}`);
+    if (!repoResponse.ok) {
+      throw new Error(`Response Status : ${repoResponse.status}`);
     }
 
-    const RepoData = await RepoResponse.json();
-    console.log(RepoData);
-
-    RepoList.innerHTML = RepoData.map(
-      (RepoLink) =>
-        `<li>
-    <a href="${RepoLink.html_url}" target="_blank">${RepoLink.name}</a>
-  </li>
-`,
-    ).join("");
-    //Display a search repository as the user type
-    SearchRepo.addEventListener("input", () => {
-      const RepoType = SearchRepo.value.trim().toLowerCase();
-
-      const RepoFilter = RepoData.filter((Repo) => {
-        return Repo.name.toLowerCase().includes(RepoType);
-
-      });
-
-      //Update Repolist as the user types
-      RepoList.innerHTML = RepoFilter.map(
-        (RepoLink) => `<li>
-      <a href="${RepoLink.html_url}" target="_blank">${RepoLink.name}</a>
-    </li>`,
-      ).join("");
-    });
+    currentRepoData = await repoResponse.json();
+    renderRepositoryList(currentRepoData);
   } catch (error) {
     alert(error.message);
-    console.log(error.message);
+    clearResults();
   }
 };
 
 SearchBtn.addEventListener("click", ProfileSearch);
+ProfileName.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") ProfileSearch;
+});
