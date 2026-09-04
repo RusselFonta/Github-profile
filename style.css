@@ -139,15 +139,16 @@ body {
     margin-top: 10px;
 }
 
-@media (max-width: 650px){
-    .container{
+@media (max-width: 650px) {
+    .container {
         flex-direction: column;
         gap: 15px;
     }
-     .Profile_info {
+
+    .Profile_info {
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid #bdbdbd;
+        border-bottom: 1px solid #3a3838;
         padding-bottom: 20px;
     }
 }
