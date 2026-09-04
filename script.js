@@ -1,13 +1,13 @@
-const ProfileName = document.querySelector(".Input_bar");
-const SearchBtn = document.querySelector(".Search_btn");
+const ProfileName = document.querySelector(".inputBar");
+const SearchBtn = document.querySelector(".searchBtn");
 const Avatar = document.querySelector(".Avatar");
-const Name = document.getElementById("Username");
-const userFollower = document.querySelector(".Follower");
+const Name = document.querySelector(".username");
+const userFollower = document.querySelector(".follower");
 const userFollowing = document.querySelector(".following");
-const ProfileLink = document.querySelector(".profile_link");
-const RepoList = document.querySelector(".Repo_list");
-const AvatarLink = document.querySelector(".Profile-image");
-const SearchRepo = document.querySelector(".SearchRepo");
+const ProfileLink = document.querySelector(".profileLink");
+const RepoList = document.querySelector(".repoList");
+const AvatarLink = document.querySelector(".profileImage");
+const SearchRepo = document.querySelector(".searchRepo");
 const ProfileDisplay = document.querySelector(".container");
 const ProfileSearch = async () => {
   try {
