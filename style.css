@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -23,7 +29,8 @@ body {
 }
 
 .Input_bar {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     height: 35px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -132,6 +139,15 @@ body {
     margin-top: 10px;
 }
 
-.user-info p {
-    margin: 0;
+@media (max-width: 650px){
+    .container{
+        flex-direction: column;
+        gap: 15px;
+    }
+     .Profile_info {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #bdbdbd;
+        padding-bottom: 20px;
+    }
 }
