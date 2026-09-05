@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Github Profile search</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="icon" type="image/png" href="asset/image/avatar.PNG" />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <section class="search-box">
+        <input
+          type="text"
+          class="input-bar"
+          placeholder="Enter a github user name...."
+        />
+        <button class="search-btn">Search User</button>
+      </section>
+      <main class="container">
+        <section class="profile-info">
+          <a
+            href="#"
+            class="profile-image"
+            title="Go to profile"
+            target="_blank"
+            ><img src="asset/image/avatar.PNG" alt="Avatar" class="avatar"
+          /></a>
+          <div class="user-info">
+            <p>Username :</p>
+            <h2 class="username"></h2>
+          </div>
+          <div class="profile-stat">
+            <p>Follower : <span class="follower"></span></p>
+            <p>Following : <span class="following"></span></p>
+             <p>Repository Number : <span class= "repo-number"></span></p>
+            <a href="#" target="_blank" class="profile-link"
+              >View Github Profile</a
+            >
+          </div>
+        </section>
+        <section class="repository">
+          <h3>Public Repositories</h3>
+          <input
+            type="text"
+            placeholder="Enter a Repository Name..."
+            class="search-repo"
+          />
+          <ul class="repo-list"></ul>
+        </section>
+      </main>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
